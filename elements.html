@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .box, .btn, .hover-element {
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            color: #fff;
+        }
+        .box {
+            background-color: #007bff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn {
+            background-color: #28a745;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hover-element {
+            background-color: #dc3545;
+            text-align: center;
+        }
+        .hover-element:hover {
+            background-color: #c82333;
+        }
+        .message {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #17a2b8;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Styling with JavaScript</h1>
+        
+        <!-- Task 1: HTML Structure with at least 5 elements -->
+        <div id="box" class="box" onclick="changeColor()">Click me to change color</div>
+        <button class="btn" onclick="changeBoxText()">Change Box Text</button>
+        <button class="btn" onclick="showMessage()">Show Message</button>
+        <div class="hover-element">Hover over me to see a color change</div>
+        <div id="message" class="message" style="display: none;">This is a message!</div>
+    </div>
+
+    <script>
+        // Task 2: JavaScript to dynamically change the color of the box element when clicked
+        function changeColor() {
+            const box = document.getElementById('box');
+            const currentColor = box.style.backgroundColor;
+            box.style.backgroundColor = (currentColor === 'rgb(255, 0, 0)' || currentColor === '') ? 'blue' : 'red';
+        }
+
+        // Task 3: Additional Styling Changes Based on User Interaction
+        
+        // Change the text of the box element when the button is clicked
+        function changeBoxText() {
+            const box = document.getElementById('box');
+            box.textContent = 'Color Changed!';
+        }
+
+        // Show a message when the button is clicked
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.style.display = message.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
